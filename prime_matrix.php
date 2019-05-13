@@ -12,7 +12,7 @@ function multiply_n_prime($n) {
       if (($num%$i)==0) 
         $div_count++;
     }
-    if ($div_count<3)  
+    if ($div_count === 2)  
     {  
       $prime_array[] = $num;  
       $count=$count+1;  
