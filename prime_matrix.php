@@ -2,16 +2,22 @@
 
 function multiply_n_prime($n) {
   $prime_array = array();
-  for( $i = 2; $i <= $n; $i++ )
-  {
-    for( $j = 2; $j < $i; $j++ )
-    {
-      if( $i % $j === 0 )
-        break;
-
+  $count = 0;  
+  $num = 2;
+  while ($count < $n )  
+  {  
+    $div_count=0;  
+    for ( $i=1; $i<=$num; $i++)  
+    {  
+      if (($num%$i)==0) 
+        $div_count++;
     }
-    if( $j === $i )
-      $prime_array[] = $i ;
+    if ($div_count<3)  
+    {  
+      $prime_array[] = $num;  
+      $count=$count+1;  
+    }  
+    $num=$num+1;  
   }
   $prime_count = count($prime_array);
   echo "<pre>  ".implode("  ",$prime_array)."<br>";
@@ -25,7 +31,6 @@ function multiply_n_prime($n) {
       echo "<br>";
   }
 }
-
-multiply_n_prime('30');
+multiply_n_prime(10);
 
 ?>
